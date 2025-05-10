@@ -34,3 +34,8 @@ Las rutas de la API pueden ser probadas usando Postman. Se incluyen operaciones 
 
 El controlador `ProductoController` está documentado con comentarios tipo JSDoc para facilitar su mantenimiento y comprensión.
 
+## Pruebas
+
+### Ejecutar todas las pruebas:
+```bash
+php artisan test
