@@ -25,17 +25,18 @@ Este proyecto es una API RESTful desarrollada en Laravel para la gestión de pro
 3. Copia `.env.example` a `.env` y configura la base de datos.
 4. Ejecuta las migraciones: `php artisan migrate`.
 5. Inicia el servidor: `php artisan serve`.
+6. 
+## Documentación
+
+El controlador `ProductoController` está documentado con comentarios tipo JSDoc para facilitar su mantenimiento y comprensión.
+
 
 ## Pruebas
 
 Las rutas de la API pueden ser probadas usando Postman. Se incluyen operaciones con todos los verbos HTTP (GET, POST, PUT, DELETE).
 
-## Documentación
-
-El controlador `ProductoController` está documentado con comentarios tipo JSDoc para facilitar su mantenimiento y comprensión.
-
-## Pruebas
-
 ### Ejecutar todas las pruebas:
 ```bash
 php artisan test
+
+
