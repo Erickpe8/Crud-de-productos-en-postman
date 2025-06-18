@@ -7,22 +7,17 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    /**
-     * Devuelve una lista con todos los productos.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
+    // FUNCIÓN: obtener todos los productos
+    // ENTRA: nada
+    // SALE: lista de productos
     public function index()
     {
         return Producto::all();
     }
-
-    /**
-     * Crea un nuevo producto a partir de los datos recibidos en la solicitud.
-     *
-     * @param \Illuminate\Http\Request $request Datos del producto (nombre, precio, descripción).
-     * @return \App\Models\Producto
-     */
+    
+    // FUNCIÓN: validar y guardar un nuevo producto
+    // ENTRA: nombre, precio y descripción del producto (por formulario)
+    // SALE: producto creado
     public function store(Request $request)
     {
         $request->validate([
@@ -33,38 +28,28 @@ class ProductoController extends Controller
 
         return Producto::create($request->all());
     }
-
-    /**
-     * Muestra los datos de un producto específico.
-     *
-     * @param int $id ID del producto a consultar.
-     * @return \App\Models\Producto
-     */
+    
+    // FUNCIÓN: buscar un producto específico
+    // ENTRA: id del producto
+    // SALE: datos del producto
     public function show($id)
     {
         return Producto::findOrFail($id);
     }
-
-    /**
-     * Actualiza los datos de un producto específico.
-     *
-     * @param \Illuminate\Http\Request $request Nuevos datos del producto.
-     * @param int $id ID del producto a actualizar.
-     * @return \App\Models\Producto
-     */
+    
+    // FUNCIÓN: actualizar producto existente
+    // ENTRA: id del producto + datos nuevos
+    // SALE: producto actualizado
     public function update(Request $request, $id)
     {
         $producto = Producto::findOrFail($id);
         $producto->update($request->all());
         return $producto;
     }
-
-    /**
-     * Elimina un producto específico de la base de datos.
-     *
-     * @param int $id ID del producto a eliminar.
-     * @return \Illuminate\Http\JsonResponse
-     */
+    
+    // FUNCIÓN: eliminar producto
+    // ENTRA: id del producto
+    // SALE: mensaje de confirmación
     public function destroy($id)
     {
         $producto = Producto::findOrFail($id);
